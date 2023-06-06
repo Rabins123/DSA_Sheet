@@ -37,6 +37,23 @@ public static int[] reverseArrayUsingSinglePointer(int [] nums){
     return nums;
 }
 
+// ------------------------------Approach:3 Using recursion----------------------------
+// - TC: O(n)
+// - SC: O(n) 
+public static int[] reverseArrayUsingRecursion(int [] nums , int s, int e){
+
+    if(s>e){
+        return nums;
+    }
+    int temp=nums[s];
+    nums[s]=nums[e];
+    nums[e]=temp;
+    s++;e--;
+    return reverseArrayUsingRecursion(nums , s,  e);
+    
+    
+}
+
 
 //print function
 public static void print(int [] result){
@@ -66,5 +83,12 @@ public static void print(int [] result){
         System.out.println("Reversing the array using two pointer: ");
         int[] ans2=reverseArrayUsingSinglePointer(arr);
         print(ans2);
+
+        System.out.println();
+        System.out.println("______________________________________________________________ ");
+        // calling each function from here
+        System.out.println("Reversing the array using two pointer: ");
+        int[] ans3=reverseArrayUsingRecursion(arr, 0, arr.length-1);
+        print(ans3);
     }
 }
