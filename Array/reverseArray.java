@@ -30,14 +30,33 @@ public static int[] reverseArrayUsingTwoPointer(int [] nums){
 public static int[] reverseArrayUsingSinglePointer(int [] nums){
     int n=nums.length;
     for(int i=0;i<n/2;i++){
-       int temp=nums[1];
-       nums[1]=nums[n-1-i];
+       int temp=nums[i];
+       nums[i]=nums[n-1-i];
        nums[n-1-i]=temp;
     }
     return nums;
 }
 
-// ------------------------------Approach:3 Using recursion----------------------------
+// ------------------------------Approach:3 Using XOR----------------------------
+// - TC: O(n)
+// - SC: O(1) 
+public static int[] reverseArrayUsingXOR(int [] nums3 ){
+
+    int s=0;
+     int e=nums3.length-1;
+     while(s<e){
+        nums3[s]=nums3[s]^nums3[e];
+        nums3[e]=nums3[s]^nums3[e];
+        nums3[s]=nums3[s]^nums3[e];;
+        s++;e--;
+     }
+     return nums3; 
+    
+    
+}
+
+
+// ------------------------------Approach:4 Using recursion----------------------------
 // - TC: O(n)
 // - SC: O(n) 
 public static int[] reverseArrayUsingRecursion(int [] nums , int s, int e){
@@ -80,15 +99,23 @@ public static void print(int [] result){
         System.out.println();
         System.out.println("______________________________________________________________ ");
         // calling each function from here
-        System.out.println("Reversing the array using two pointer: ");
+        System.out.println("Reversing the array using Single pointer: ");
         int[] ans2=reverseArrayUsingSinglePointer(arr);
         print(ans2);
 
         System.out.println();
         System.out.println("______________________________________________________________ ");
         // calling each function from here
-        System.out.println("Reversing the array using two pointer: ");
-        int[] ans3=reverseArrayUsingRecursion(arr, 0, arr.length-1);
+        System.out.println("Reversing the array using recursion: ");
+        int[] ans4=reverseArrayUsingRecursion(arr, 0, arr.length-1);
+        print(ans4);
+
+
+        System.out.println();
+        System.out.println("______________________________________________________________ ");
+        // calling each function from here
+        System.out.println("Reversing the array using XOR: ");
+        int[] ans3=reverseArrayUsingXOR(arr);
         print(ans3);
     }
 }
