@@ -1,6 +1,6 @@
 package Array;
 
-//Array Rotation - Problem: Reverse an array 
+//Array Reverse Problem: Reverse an array 
 // - Sample Input: Array: [1, 2, 3, 4, 5]
 // - Sample Output: Rotated Array: [5, 4, 3, 2, 1]
 
@@ -23,6 +23,28 @@ public static int[] reverseArrayUsingTwoPointer(int [] nums){
      return nums;
 }
 
+
+// ------------------------------Approach:2 Using single pointer----------------------------
+// - TC: O(n)
+// - SC: O(1) more optimised than first
+public static int[] reverseArrayUsingSinglePointer(int [] nums){
+    int n=nums.length;
+    for(int i=0;i<n/2;i++){
+       int temp=nums[1];
+       nums[1]=nums[n-1-i];
+       nums[n-1-i]=temp;
+    }
+    return nums;
+}
+
+
+//print function
+public static void print(int [] result){
+    for(int j=0; j<result.length;j++){
+        System.out.print(result[j]+" ");
+    }
+}
+
     public static void main (String[] args){
         int [] arr={1,2,3,4,5,6,7};
 
@@ -35,9 +57,14 @@ public static int[] reverseArrayUsingTwoPointer(int [] nums){
         System.out.println("______________________________________________________________ ");
         // calling each function from here
         System.out.println("Reversing the array using two pointer: ");
-        int[] result1=reverseArrayUsingTwoPointer(arr);
-        for(int j=0; j<result1.length;j++){
-            System.out.print(result1[j]+" ");
-        }
+        int[] ans1=reverseArrayUsingTwoPointer(arr);
+        print(ans1);
+
+        System.out.println();
+        System.out.println("______________________________________________________________ ");
+        // calling each function from here
+        System.out.println("Reversing the array using two pointer: ");
+        int[] ans2=reverseArrayUsingSinglePointer(arr);
+        print(ans2);
     }
 }
