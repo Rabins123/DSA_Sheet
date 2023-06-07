@@ -1,0 +1,9 @@
+Notes
+In this code, we create a PriorityQueue named pq and perform the following operations:
+
+#1-We use the offer() function to insert elements into the priority queue. We insert elements 5, 10, and 3 in that order.
+#2-The peek() function retrieves the head of the priority queue without removing it. We assign the returned value to the variable head and print it.
+#3-The poll() function retrieves and removes the head of the priority queue. We assign the removed element to the variable removedElement and print it.
+#4-The size() function returns the number of elements in the priority queue. We assign the returned value to the variable size and print it.
+#5-The isEmpty() function checks whether the priority queue is empty. We assign the returned value to the variable empty and print it.
+#6-Finally, we print the elements in the priority queue using the default toString() method of the PriorityQueue class.
