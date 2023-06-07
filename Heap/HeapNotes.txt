@@ -7,3 +7,9 @@ In this code, we create a PriorityQueue named pq and perform the following opera
 #4-The size() function returns the number of elements in the priority queue. We assign the returned value to the variable size and print it.
 #5-The isEmpty() function checks whether the priority queue is empty. We assign the returned value to the variable empty and print it.
 #6-Finally, we print the elements in the priority queue using the default toString() method of the PriorityQueue class.
+
+
+
+For max Heap
+  // Create a max heap
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
