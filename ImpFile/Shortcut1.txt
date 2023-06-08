@@ -3,3 +3,7 @@ psvm-->for creating main function
 sysout-->for creating printing statement
 
 //----------------Note2----------------------------------
+Arranging code-->right click-->click on format document
+Big line--Rightclick-->command pallet-->toggle wrap
+
+//----------------//-----------------------------//-----------------------//---------------
