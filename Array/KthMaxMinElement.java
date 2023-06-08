@@ -43,7 +43,7 @@ public static int findKthMaximum(int[] arr, int k){
         return maxHeap.peek();
 }
 
-//--------------------Aproach 1-Using Sorting--------------------------------
+//--------------------Aproach 2-Using Sorting--------------------------------
 //tc-nlogn
 //sc-1
 public static void findkthMaxMinUsingSorting(int nums[], int k){
@@ -57,6 +57,10 @@ public static void findkthMaxMinUsingSorting(int nums[], int k){
     //kth min
     System.out.println("kth min elemnt: "+ nums[k-1]);
 }
+
+//--------------------Aproach 3-Using --------------------------------
+//tc-
+//sc-
 
 
 
