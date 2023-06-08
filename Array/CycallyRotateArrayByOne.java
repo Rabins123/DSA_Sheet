@@ -21,6 +21,7 @@ public class CycallyRotateArrayByOne {
         }
         nums[0]=end;
 
+        //print the array
         for(int k=0;k<nums.length;k++){
             System.out.print(nums[k]+" ");
 
