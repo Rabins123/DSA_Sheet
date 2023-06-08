@@ -30,7 +30,7 @@ public class CycallyRotateByK {
         }
     }
 
-    // -----reverse method---------//------tc---------//--------sc---------//---------------------//----------------------//
+    // -----reverse method---------//------tc->0(N)-------//--------sc->0(1)-------//---------------------//----------------------//
     //   arr={1 ,2 ,3 , 4 ,5 } k=4
     //  reverse first 4-->{5,4,3,2}
     //  reversing last remaining--> {1}
@@ -60,6 +60,8 @@ public class CycallyRotateByK {
             end--;
         }
     }
+
+    //-----------------------------------Using Extra Space---------------------------------
 
     // main method
     public static void main(String[] args) {
