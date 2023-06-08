@@ -28,6 +28,9 @@ public static ArrayList<Integer>IntersectionOfSortedArrayUsingArrayList(int[]num
     return list;
 }
 
+//-----------------------------Approach1-Using Arraylist------------------------------
+    //tc- O(m + n)
+    //sc-O(1) 
 
     //main method
     public static void main(String[] args) {
