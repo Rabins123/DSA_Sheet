@@ -1,0 +1,5 @@
+//-----------------Note1---------------------------------
+psvm-->for creating main function
+sysout-->for creating printing statement
+
+//----------------Note2----------------------------------
