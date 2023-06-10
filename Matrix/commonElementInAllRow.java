@@ -15,5 +15,15 @@ Output:
  */
 
  public class commonElementInAllRow{
+   
     
+
+    //main function
+    public static void main(String[] args) {
+        int arr[][]={{1, 2, 1, 4, 8},
+             {3, 7, 8, 5, 1},
+             {8, 7, 7, 3, 1},
+             {8, 1, 2, 7, 9},
+            };
+    }
  }
