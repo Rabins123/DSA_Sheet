@@ -18,7 +18,7 @@ Expected Auxiliary Space: O(N)
 
 public class KthSmallestElementInMatrix {
 
-    //---------------------------approach1-Binary search-------------------
+    //---------------------------approach1-Nested Binary search-------------------
     public static int kthSmallest(int[][]mat,int k){
         //code here.
         int r = mat.length;
@@ -31,10 +31,32 @@ public class KthSmallestElementInMatrix {
         while(startval<=endval){
             midval= (startval +endval)/2;
             //row wise traversing the matrix
-            for()
+            int ans=0;
+            for(int i=0;i<r;i++){
+                //Apply binary search in each row
+                int low=0;
+                int high=c-1;
+                int mid;
+                while (low<=high){
+                    mid=low+(high-low)/2;
+                    if(mat[i][mid]<=midval){
+                        low=mid+1;
+                    }
+                    else{
+                        high=mid-1;
+                    }
+                }
+                ans=low;
+            }
+            if(ans<k){
+                startval=midval+1;
+            }
+            else{
+               endval=midval-1;
+            }
         }
 
-        return n;
+        return startval;
     }
 
 
@@ -42,9 +64,9 @@ public class KthSmallestElementInMatrix {
 
     //main method
     public static void main(String[] args) {
-        int arr[][]={{10, 20, 30, 40}
-                   {15, 25, 35, 45}
-                   {24, 29, 37, 48}
+        int arr[][]={{10, 20, 30, 40},
+                   {15, 25, 35, 45},
+                   {24, 29, 37, 48},
                    {32, 33, 39, 50}};
 
         int k= 7;
