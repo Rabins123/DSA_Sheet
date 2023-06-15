@@ -21,9 +21,9 @@ public class CycallyRotateArrayByOne {
         }
         nums[0]=end;
 
-        //print the array
+        //print the array first
         for(int k=0;k<nums.length;k++){
-            System.out.print(nums[k]+" ");
+            System.out.print(nums[k]+"  ");
 
         }
     }
@@ -33,7 +33,7 @@ public class CycallyRotateArrayByOne {
     public static void main(String[] args) {
         int arr[]={1,2,3,4,5};
 
-        System.out.println("-------------------------Original Array---------------------------");
+        System.out.println("-------------------------Original Array----------------------");
         for(int k=0;k<arr.length;k++){
             System.out.print(arr[k]+" ");
 
