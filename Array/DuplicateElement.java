@@ -60,19 +60,21 @@ public class DuplicateElement {
 
 
     //------------------------------Using HashSet----------------//----------------------------//---------------------
-    //tc-0(n)
-    //sc-0(n)
+    //tc-0(n*n)
+    //sc-0(1)
      public static int duplicateUsingSorting (int[] nums) {
         int len = nums.length;
+        int result=0;
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j < len; j++) {
                 if (nums[i] == nums[j]) {
-                    return nums[i];
+                    result= nums[i];
+                    break;
                 }
             }
         }
 
-        return len;
+        return result;
     }
 
     // main function 
