@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.HashSet;
+
 //Find the Duplicate Number
 
 /*
@@ -39,6 +41,36 @@ public class DuplicateElement {
     }
 
 
+    //------------------------------Using HashSet----------------//----------------------------//---------------------
+    //tc-0(n)
+    //sc-0(n)
+   private static int duplicateUsingHashSet(int[] arr) {
+        HashSet<Integer>set=new HashSet<>();
+        int ans=0;
+        for(int i=0;i<arr.length;i++){
+            if(set.contains(arr[i])){
+                ans=arr[i];
+                break;
+            }
+            set.add(arr[i]);
+        }
+        
+        return ans;
+    }
+
+     public static int findDuplicate_2loops(int[] nums) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j < len; j++) {
+                if (nums[i] == nums[j]) {
+                    return nums[i];
+                }
+            }
+        }
+
+        return len;
+    }
+
     // main function 
     public static void main(String[] args) {
         
@@ -48,9 +80,11 @@ public class DuplicateElement {
 
         int ans1= duplicateUsingFloyas(arr);
         System.out.println("Duplicate Element Using Flyoad Algo is : "+ ans1);
+        System.out.println();
 
-        // int ans2= duplicateUsingHashSet(arr);
-        // System.out.println("Duplicate Element is : "+ ans2);
+        int ans2= duplicateUsingHashSet(arr);
+        System.out.println("Duplicate Element Using Hashset is : "+ ans2);
+        System.out.println();
 
         // int ans3= duplicateUsingSorting(arr);
         // System.out.println("Duplicate Element is : "+ ans3);
@@ -59,6 +93,9 @@ public class DuplicateElement {
         // System.out.println("Duplicate Element is : "+ ans4);
 
     }
+
+
+    
 
   
 }
