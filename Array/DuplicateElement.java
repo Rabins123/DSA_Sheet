@@ -58,7 +58,11 @@ public class DuplicateElement {
         return ans;
     }
 
-     public static int findDuplicate_2loops(int[] nums) {
+
+    //------------------------------Using HashSet----------------//----------------------------//---------------------
+    //tc-0(n)
+    //sc-0(n)
+     public static int duplicateUsingSorting (int[] nums) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j < len; j++) {
@@ -86,8 +90,9 @@ public class DuplicateElement {
         System.out.println("Duplicate Element Using Hashset is : "+ ans2);
         System.out.println();
 
-        // int ans3= duplicateUsingSorting(arr);
-        // System.out.println("Duplicate Element is : "+ ans3);
+        int ans3= duplicateUsingSorting(arr);
+        System.out.println("Duplicate Element Using Nested loop is : "+ ans3);
+         System.out.println();
 
         // int ans4= duplicateUsingNesteLoop(arr);
         // System.out.println("Duplicate Element is : "+ ans4);
