@@ -2,6 +2,32 @@ package Array;
 
 public class TapRainWater {
 
+ //-------------------------------------------------Using Brute force approach---------------------------------
+     public static int trapRainwaterUsingBruteforce(int arr[]){
+        int n=arr.length;
+        // code here
+        int res = 0;
+  
+        // For every element of the array
+        for (int i = 1; i < n - 1; i++) {
+  
+        // Find the maximum element on its left
+        int left = arr[i];
+        for (int j = 0; j < i; j++)
+            left = Math.max(left, arr[j]);
+  
+        // Find the maximum element on its right
+        int right = arr[i];
+        for (int j = i + 1; j < n; j++)
+            right = Math.max(right, arr[j]);
+  
+        // Update the maximum water
+        res = res + (Math.min(left, right) - arr[i]);
+    }
+  
+    return res;
+    }
+
 
     //-------------------------------------------------Using Pre calculation---------------------------------
     //tc-0(n)
@@ -37,7 +63,10 @@ public class TapRainWater {
     public static void main(String[] args) {
         // Test case
         int[] heights = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
-        int trappedWater = trapRainwater(heights);
-        System.out.println("Trapped water: " + trappedWater);
+        int trappedWater1 = trapRainwater(heights);
+        System.out.println("Trapped water: " + trappedWater1);
+
+        int trappedWater2 = trapRainwaterUsingBruteforce(heights);
+        System.out.println("Trapped water: " + trappedWater2);
     }
 }
