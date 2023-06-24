@@ -75,7 +75,7 @@ public class factOfLargeNum{
         
 
         //calling the function
-         int n = 100;
+         int n = 5;
 
          //call the function
         LinkedList<Integer> factorial1 = calculateFactorialUsingLinkedList(n);
