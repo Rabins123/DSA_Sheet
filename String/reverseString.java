@@ -24,7 +24,7 @@ public class reverseString {
     // main function
     public static void main(String[] args) {
         String str1 = "Rabins";
-        String str2 = "chaudhary";
+        // String str2 = "chaudhary";
 
         // call the function
         System.out.print("Reverse string is : ");
