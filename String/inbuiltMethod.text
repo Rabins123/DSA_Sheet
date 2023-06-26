@@ -1,0 +1,45 @@
+Certainly! Here are the syntaxes of each method in a simplified bullet point format:
+
+- Method 1: Length of the string
+  - Syntax: `int length = str.length();`
+
+- Method 2: Convert to uppercase
+  - Syntax: `String uppercase = str.toUpperCase();`
+
+- Method 3: Convert to lowercase
+  - Syntax: `String lowercase = str.toLowerCase();`
+
+- Method 4: Check if the string starts with a specific prefix
+  - Syntax: `boolean startsWith = str.startsWith("Hello");`
+
+- Method 5: Check if the string ends with a specific suffix
+  - Syntax: `boolean endsWith = str.endsWith("!");`
+
+- Method 6: Extract a substring
+  - Syntax: `String substring = str.substring(7, 12);`
+
+- Method 7: Replace characters in the string
+  - Syntax: `String replaced = str.replace("World", "Universe");`
+
+- Method 8: Check if the string contains a specific sequence of characters
+  - Syntax: `boolean contains = str.contains("lo");`
+
+- Method 9: Trim leading and trailing whitespace
+  - Syntax: `String trimmed = str.trim();`
+
+- Method 10: Split the string into an array of substrings
+  - Syntax: `String[] split = str.split(",");`
+
+- Method 11: Check if the string is empty
+  - Syntax: `boolean isEmpty = str.isEmpty();`
+
+- Method 12: Get the index of a specific character
+  - Syntax: `int index = str.indexOf('o');`
+
+- Method 13: Concatenate two strings
+  - Syntax: `String concatenated = str.concat(" Welcome");`
+
+- Method 14: Compare two strings lexicographically
+  - Syntax: `int compare = str.compareTo("Hello");`
+
+Please note that each syntax line assumes the `str` variable is of type `String`.
