@@ -43,3 +43,29 @@ Certainly! Here are the syntaxes of each method in a simplified bullet point for
   - Syntax: `int compare = str.compareTo("Hello");`
 
 Please note that each syntax line assumes the `str` variable is of type `String`.
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        int[] numbers = { 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 };
+
+        // Creating a HashMap to store the frequency of numbers
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        // Iterating through the numbers array
+        for (int num : numbers) {
+            // Updating the frequency in the HashMap
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+
+            // Checking if the frequency is 4 or 5
+            int frequency = frequencyMap.get(num);
+            if (frequency == 4 || frequency == 5) {
+                System.out.println("Number " + num + " occurred " + frequency + " times.");
+            }
+        }
+    }
+}

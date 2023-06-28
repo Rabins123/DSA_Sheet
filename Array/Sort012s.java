@@ -53,7 +53,7 @@ public class Sort012s {
     public static void sort012UsingCounter(int a[], int n){
            int count0=0;
            int count1=0;
-           int count2=0;
+        //    int count2=0;
 
            //counting
            for(int i=0;i<n-1;i++){
@@ -66,7 +66,7 @@ public class Sort012s {
                 
             }
             else{
-                count2++;
+                // count2++;
                 
             }
         }
@@ -79,7 +79,7 @@ public class Sort012s {
             }
             else if(j<count1){
                 a[j]=1;
-                count2++;
+                // count2++;
             }
             else{
                 a[j]=2;

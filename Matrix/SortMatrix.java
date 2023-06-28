@@ -19,18 +19,18 @@ Sorting the matrix gives this result.
 Expected Time Complexity:O(N2LogN)
 Expected Auxillary Space:O(N2)
  */
-public class SortMatrix {
+// public class SortMatrix {
     
-    //-------------------------------------Approach1---------------------------
-    //tc
-    //sc-
-    public int[][] sortedMatrix(int N, int Mat[][]) {
-        // code here
-    }
+//     //-------------------------------------Approach1---------------------------
+//     //tc
+//     //sc-
+//     public int[][] sortedMatrix(int N, int Mat[][]) {
+//         // code here
+//     }
 
 
 
 
-    //main function
+//     //main function
     
-}
+// }
