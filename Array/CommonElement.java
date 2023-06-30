@@ -19,6 +19,10 @@ Expected Auxiliary Space: O(n1 + n2 + n3)
 
 public class CommonElement {
 
+
+    //-------------------------------------------------Using Brute force---------------------------------------------
+    //tc-0(n1*n2*n3)
+    //sc-0(1)
    public static List<Integer> findCommonElements1(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
 
@@ -38,8 +42,8 @@ public class CommonElement {
 
 
     //-------------------------------------------------------------------------------------------------------------
-    //tc-
-    //sc-
+    //tc-O(n1 + n2 + n3)
+    //sc-0(1)
         public static List<Integer> findCommonElements2(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
         int i = 0, j = 0, k = 0;
