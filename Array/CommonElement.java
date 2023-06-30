@@ -1,7 +1,9 @@
 package Array;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // find common element from three sorted arrray
 /*
@@ -60,6 +62,37 @@ public class CommonElement {
                 j++;
             } else {
                 k++;
+            }
+        }
+
+        return commonElements;
+    }
+
+
+      public static List<Integer> findCommonElements3(int[] A, int[] B, int[] C) {
+        List<Integer> commonElements = new ArrayList<>();
+        Map<Integer, Integer> frequencyMapA = new HashMap<>();
+        Map<Integer, Integer> frequencyMapB = new HashMap<>();
+        Map<Integer, Integer> frequencyMapC = new HashMap<>();
+
+        // Count the frequencies of elements in each array
+        for (int num : A) {
+            frequencyMapA.put(num, frequencyMapA.getOrDefault(num, 0) + 1);
+        }
+        for (int num : B) {
+            frequencyMapB.put(num, frequencyMapB.getOrDefault(num, 0) + 1);
+        }
+        for (int num : C) {
+            frequencyMapC.put(num, frequencyMapC.getOrDefault(num, 0) + 1);
+        }
+
+        // Iterate through the arrays and find common elements
+        for (int num : A) {
+            if (frequencyMapA.get(num) > 0 && frequencyMapB.getOrDefault(num, 0) > 0 && frequencyMapC.getOrDefault(num, 0) > 0) {
+                commonElements.add(num);
+                frequencyMapA.put(num, frequencyMapA.get(num) - 1);
+                frequencyMapB.put(num, frequencyMapB.get(num) - 1);
+                frequencyMapC.put(num, frequencyMapC.get(num) - 1);
             }
         }
 
