@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.HashSet;
+
 //subarray sum 0
 
 /*
@@ -45,7 +47,17 @@ public class SubArraySum0 {
    //sc -0(n)
 
    public static boolean findsum2(int arr[],int n){
-
+      HashSet<Integer> set=new HashSet<>();
+      
+      int sum=0;
+      for(int i=0;i<n;i++){
+        sum=sum + arr[i];
+        if(sum==0 || set.contains(0)){
+            return true;
+        }
+        set.add(sum);
+      }
+      return false;
    }
     
 
