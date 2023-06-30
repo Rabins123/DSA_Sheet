@@ -68,6 +68,25 @@ public class smallestsubArrsumgreaterk {
         return minLen;
     }
 
+
+     public static int smallestSubWithSum3(int a[], int n, int x) {
+        int minLen = Integer.MAX_VALUE;
+
+        for (int start = 0; start < n; start++) {
+            int sum = 0;
+            
+            for (int end = start; end < n; end++) {
+                sum += a[end];
+                
+                if (sum > x) {
+                    minLen = Math.min(minLen, end - start + 1);
+                    break;
+                }
+            }
+        }
+
+        return minLen;
+    }
     //main function
     public static void main(String[] args) {
         int A[] = {1, 4, 45, 6, 0, 19};
@@ -81,6 +100,10 @@ public class smallestsubArrsumgreaterk {
 
          int ans2=smallestSubWithSum2(A,  n, x);
          System.out.println(ans2);
+         System.out.println();
+
+         int ans3=smallestSubWithSum3(A,  n, x);
+         System.out.println(ans3);
          System.out.println();
     }
 }
