@@ -21,11 +21,11 @@ Expected Auxiliary Space: O(n1 + n2 + n3)
 
 public class CommonElement {
 
-
-    //-------------------------------------------------Using Brute force---------------------------------------------
-    //tc-0(n1*n2*n3)
-    //sc-0(1)
-   public static List<Integer> findCommonElements1(int[] A, int[] B, int[] C) {
+    // -------------------------------------------------Using Brute
+    // force---------------------------------------------
+    // tc-0(n1*n2*n3)
+    // sc-0(1)
+    public static List<Integer> findCommonElements1(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
 
         for (int i = 0; i < A.length; i++) {
@@ -42,11 +42,10 @@ public class CommonElement {
         return commonElements;
     }
 
-
-    //-------------------------------------------------------------------------------------------------------------
-    //tc-O(n1 + n2 + n3)
-    //sc-0(1)
-        public static List<Integer> findCommonElements2(int[] A, int[] B, int[] C) {
+    // -------------------------------------------------------------------------------------------------------------
+    // tc-O(n1 + n2 + n3)
+    // sc-0(1)
+    public static List<Integer> findCommonElements2(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
         int i = 0, j = 0, k = 0;
 
@@ -68,8 +67,10 @@ public class CommonElement {
         return commonElements;
     }
 
-
-      public static List<Integer> findCommonElements3(int[] A, int[] B, int[] C) {
+    // -------------------------------------------------------------------------------------------------------------
+    // tc-O(n1 + n2 + n3)
+    // sc-0(1)
+    public static List<Integer> findCommonElements3(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
         Map<Integer, Integer> frequencyMapA = new HashMap<>();
         Map<Integer, Integer> frequencyMapB = new HashMap<>();
@@ -88,7 +89,8 @@ public class CommonElement {
 
         // Iterate through the arrays and find common elements
         for (int num : A) {
-            if (frequencyMapA.get(num) > 0 && frequencyMapB.getOrDefault(num, 0) > 0 && frequencyMapC.getOrDefault(num, 0) > 0) {
+            if (frequencyMapA.get(num) > 0 && frequencyMapB.getOrDefault(num, 0) > 0
+                    && frequencyMapC.getOrDefault(num, 0) > 0) {
                 commonElements.add(num);
                 frequencyMapA.put(num, frequencyMapA.get(num) - 1);
                 frequencyMapB.put(num, frequencyMapB.get(num) - 1);
@@ -100,9 +102,9 @@ public class CommonElement {
     }
 
     public static void main(String[] args) {
-        int[] A = {1, 5, 10, 20, 40, 80};
-        int[] B = {6, 7, 20, 80, 100};
-        int[] C = {3, 4, 15, 20, 30, 70, 80, 120};
+        int[] A = { 1, 5, 10, 20, 40, 80 };
+        int[] B = { 6, 7, 20, 80, 100 };
+        int[] C = { 3, 4, 15, 20, 30, 70, 80, 120 };
 
         List<Integer> result1 = findCommonElements1(A, B, C);
         System.out.println("Common Elements: " + result1);
