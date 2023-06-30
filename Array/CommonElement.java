@@ -69,7 +69,7 @@ public class CommonElement {
 
     // -------------------------------------------------------------------------------------------------------------
     // tc-O(n1 + n2 + n3)
-    // sc-0(1)
+    // sc-O(n1 + n2 + n3).
     public static List<Integer> findCommonElements3(int[] A, int[] B, int[] C) {
         List<Integer> commonElements = new ArrayList<>();
         Map<Integer, Integer> frequencyMapA = new HashMap<>();
@@ -112,5 +112,9 @@ public class CommonElement {
 
         List<Integer> result2 = findCommonElements2(A, B, C);
         System.out.println("Common Elements: " + result2);
+        System.out.println();
+
+         List<Integer> result3 = findCommonElements3(A, B, C);
+        System.out.println("Common Elements: " + result3);
     }
 }
