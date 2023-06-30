@@ -22,6 +22,7 @@ Expected Auxiliary Space: O(1).
 public class minmSwapRequire {
 
     public static int minSwap(int arr[], int n, int k) {
+        return k;
         // Complete the function
     }
 
