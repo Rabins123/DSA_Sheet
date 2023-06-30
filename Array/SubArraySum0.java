@@ -51,7 +51,7 @@ public class SubArraySum0 {
         int sum = 0;
         for (int i = 0; i < n; i++) {
             sum = sum + arr[i];
-            if (sum == 0 || set.contains(0)) {
+            if (sum == 0 || set.contains(sum)) {
                 return true;
             }
             set.add(sum);
