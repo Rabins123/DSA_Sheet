@@ -68,6 +68,9 @@ public class smallestsubArrsumgreaterk {
         return minLen;
     }
 
+    //------------------------------------------Using Bruteforce---------------------------------------
+    //tc-O(n*n) 
+    //sc-O(1).
 
      public static int smallestSubWithSum3(int a[], int n, int x) {
         int minLen = Integer.MAX_VALUE;
