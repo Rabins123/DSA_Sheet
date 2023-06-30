@@ -1,5 +1,6 @@
 package Array;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 //subarray sum 0
@@ -42,7 +43,7 @@ public class SubArraySum0 {
     }
     
         
-     //-------------------------------------------------------------Using HashSET-----------------------------------------------
+     //-------------------------------------------------------------Using HashSET//prefix sum-----------------------------------------------
    //tc-0(n)
    //sc -0(n)
 
@@ -60,6 +61,26 @@ public class SubArraySum0 {
       return false;
    }
     
+   //------------------------------------------------------------- same but Using Hashmap//prefix sum-----------------------------------------------
+   //tc-0(n)
+   //sc -0(n)
+
+     public static boolean findsum3(int arr[],int n) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int prefixSum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            prefixSum += arr[i];
+
+            if (prefixSum == 0 || map.containsKey(prefixSum)) {
+                return true;
+            }
+
+            map.put(prefixSum, i);
+        }
+
+        return false;
+    }
 
     //main function
     public static void main(String[] args) {
@@ -73,6 +94,10 @@ public class SubArraySum0 {
        
         boolean ans2=findsum2(arr,n);
        System.out.println(ans2);
+       System.out.println();
+
+        boolean ans3=findsum2(arr,n);
+       System.out.println(ans3);
        System.out.println();
 
        
