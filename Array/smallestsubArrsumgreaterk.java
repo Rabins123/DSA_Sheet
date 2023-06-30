@@ -15,8 +15,8 @@ Minimum length subarray is
 public class smallestsubArrsumgreaterk {
    
     //------------------------------------------optimised---------------------------------------
-    //tc-
-    //sc-
+    //tc-O(n) 
+    //sc-O(1).
      public static int smallestSubWithSum1(int a[], int n, int x) {
         // Your code goes here 
        int start = 0;
@@ -41,7 +41,32 @@ public class smallestsubArrsumgreaterk {
         return minLen;
     }
 
+  //------------------------------------------optimised---------------------------------------
+    //tc-O(n) 
+    //sc-O(1).
+      public static int smallestSubWithSum2(int a[], int n, int x) {
+        int start = 0;
+        int end = 0;
+        int sum = 0;
+        int minLen = Integer.MAX_VALUE;
 
+        while (end < n) {
+            // Increase the sum until it becomes greater than or equal to x
+            while (end < n && sum <= x) {
+                sum += a[end];
+                end++;
+            }
+
+            // Decrease the sum by moving the start pointer
+            while (start < n && sum > x) {
+                minLen = Math.min(minLen, end - start);
+                sum -= a[start];
+                start++;
+            }
+        }
+
+        return minLen;
+    }
 
     //main function
     public static void main(String[] args) {
@@ -52,6 +77,10 @@ public class smallestsubArrsumgreaterk {
          //call the function'
          int ans1=smallestSubWithSum1(A,  n, x);
          System.out.println(ans1);
+         System.out.println();
+
+         int ans2=smallestSubWithSum2(A,  n, x);
+         System.out.println(ans2);
          System.out.println();
     }
 }
