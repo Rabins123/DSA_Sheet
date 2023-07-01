@@ -1,7 +1,9 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 //Array Subset of another array
 
@@ -89,6 +91,30 @@ public class subsetOfOtherArray {
         }
     }
 
+     // ----------------------------------Hashmap----------------------------------------------
+    // tc-0(n)
+    // sc-0(n)
+    private static boolean isSubsetOfOther4(int[] a1, int[] a2){
+
+     HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+
+        // Create frequency map for array a1
+        for (int i = 0; i < a1.length; i++) {
+            frequencyMap.put(a1[i], frequencyMap.getOrDefault(a1[i], 0) + 1);
+        }
+
+        // Check if all elements of a2 are present in a1
+        for (int j = 0; j < a2.length; j++) {
+            if (!frequencyMap.containsKey(a2[j]) || frequencyMap.get(a2[j]) == 0) {
+                return false;
+            }
+            frequencyMap.put(a2[j], frequencyMap.get(a2[j]) - 1);
+        }
+
+        return true;
+    }
+
+    
     // main function
     public static void main(String[] args) {
         int a1[] = { 1, 2, 3, 4, 4, 5, 6 };
@@ -107,6 +133,10 @@ public class subsetOfOtherArray {
         System.out.println();
         boolean ans3 = isSubsetOfOther3(a1, a3);
         System.out.println("One is subset of other : " + (ans3 ? "Yes it is subset of other" : "NO it is not subset of other"));
+
+        System.out.println();
+        boolean ans4 = isSubsetOfOther4(a1, a3);
+        System.out.println("One is subset of other : " + (ans4 ? "Yes it is subset of other" : "NO it is not subset of other"));
     }
 
 }
