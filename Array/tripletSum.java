@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.Arrays;
+
 public class tripletSum {
 
     // --------------------------------------------------------Brute force
@@ -22,10 +24,29 @@ public class tripletSum {
         return false;
     }
 
-    // ------------------------------------------------Sorting ansd two pointer
-    // method-------------------------------
+    // ------------------------------------------------Sorting ansd two pointer method-------------------------------
     // tc-0(N*N*)
     // sc-0(1)
+    private static boolean isPresent2(int[] arr, int x) {
+        int n=arr.length;
+        Arrays.sort(arr);
+        for(int i=0;i<n;i++){
+           int left=i+1;
+           int right=n-1;
+           while(left<right){
+            if(arr[i]+arr[left]+arr[right]==x){
+                return true;
+            }
+             else if(arr[i]+arr[left]+arr[right]<x){
+                 left++;
+            }
+            else{
+                right--;
+            }
+           }
+        }
+        return false;
+    }
 
     // main function
     public static void main(String[] args) {
@@ -37,10 +58,9 @@ public class tripletSum {
         System.out.println("Triplet sum is present or not : " + (ans1 ? "Yes Present " : "No Not Present"));
         System.out.println();
 
-        // boolean ans2= isPresent2(arr, x);
-        // System.out.println( "Triplet sum is present or not : "+(ans2 ? "Yes Present
-        // ": "No Not Present"));
-        // System.out.println();
+        boolean ans2 = isPresent2(arr, x);
+        System.out.println("Triplet sum is present or not : " + (ans2 ? "Yes Present" : "No Not Present"));
+        System.out.println();
     }
 
 }
