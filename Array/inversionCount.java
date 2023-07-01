@@ -13,6 +13,9 @@ Expected Auxiliary Space: O(N).
 
 public class inversionCount {
   
+    //----------------------------------using brute force approachg-------------------------------------------
+    //tc-n*n
+    //sc-1
    public static int getInversionCount(int[] arr) {
         int inversionCount = 0;
         int n = arr.length;
@@ -27,6 +30,10 @@ public class inversionCount {
         
         return inversionCount;
     }
+
+    //----------------------------------using merge sort-------------------------------------------
+    //tc-nlogn
+    //sc-n
 
     public static void main(String[] args) {
         int[] arr = {2, 4, 1, 3, 5};
