@@ -1,7 +1,7 @@
 package Array;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 
 //Given Array of size n and a number k, find all elements that appear more than n/k times
 
