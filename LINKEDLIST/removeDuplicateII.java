@@ -1,5 +1,6 @@
 package LINKEDLIST;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 //renove duplicate from unsortedlist -gfg
@@ -20,9 +21,33 @@ Expected Auxiliary Space: O(N)
 
 public class removeDuplicateII {
 
+
+    //------------------------------------------Using hashmap and two pointer------------------------------------------------------
+    //tc-0(n)
+    //sc-0(n)
     private static Node removeII(Node head) {
-        return null;
-    }
+      
+             // Your code here
+             HashMap<Integer,Integer> map=new HashMap<>();
+             Node prev=null;
+             Node curr=head;
+             map.put(curr.data,1);
+             prev=curr;
+             curr=curr.next;
+             while(curr!=null){
+                 if(map.containsKey(curr.data)){
+                     prev.next=curr.next;
+                     curr=prev.next;
+                 }
+                 else{
+                     map.put(curr.data,1);
+                     prev=curr;
+                     curr=curr.next;
+                 }
+             }
+             return head;
+        }
+    
 
     // main function
     public static void main(String[] args) {
